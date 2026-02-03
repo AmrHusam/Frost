@@ -12,6 +12,7 @@ import { SettingsView } from './components/SettingsView';
 import { SupervisorMonitor } from './components/SupervisorMonitor';
 import { useFrostEvent } from '../../shared/hooks/useFrost';
 import { useAgentListener } from '../../shared/hooks/useAgentListener';
+import frostLogo from '../../assets/frost-logo.jpg';
 
 import { useUIStore } from '../../shared/store/useUIStore';
 
@@ -78,7 +79,7 @@ const AgentLayout: React.FC = () => {
     const statuses = [
         { id: 'READY', label: 'Available', color: 'text-emerald-500', bg: 'bg-emerald-500' },
         { id: 'NOT_READY', label: 'Away', color: 'text-amber-500', bg: 'bg-amber-500' },
-        { id: 'BREAK', label: 'Break', color: 'text-indigo-500', bg: 'bg-indigo-500' },
+        { id: 'BREAK', label: 'Break', color: 'text-violet-500', bg: 'bg-violet-500' },
         { id: 'WRAP_UP', label: 'Wrap Up', color: 'text-rose-500', bg: 'bg-rose-500' },
     ];
 
@@ -112,7 +113,7 @@ const AgentLayout: React.FC = () => {
             {toast && (
                 <div className={`fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-zinc-900 border shadow-2xl flex items-center gap-3 animate-in slide-in-from-right-12 duration-300 ${toast.type === 'error' ? 'border-rose-500/50 text-rose-400' :
                     toast.type === 'success' ? 'border-emerald-500/50 text-emerald-400' :
-                        'border-indigo-500/50 text-indigo-400'
+                        'border-violet-500/50 text-violet-400'
                     }`}>
                     {toast.type === 'error' ? <AlertCircle size={18} /> : <Activity size={18} />}
                     <span className="font-medium text-sm">{toast.message}</span>
@@ -125,10 +126,8 @@ const AgentLayout: React.FC = () => {
                 style={{ width: '260px', display: 'flex', flexDirection: 'column', flexShrink: 0, borderRight: '1px solid rgba(255,255,255,0.05)', background: '#18181b' }}
             >
                 <div className="p-6 flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-600/20">
-                        <ShieldCheck size={20} className="text-white" />
-                    </div>
-                    <span className="font-bold text-xl tracking-tight">Global<span className="text-indigo-500">Dialer</span></span>
+                    <img src={frostLogo} alt="Frost" className="h-8 w-8 rounded-lg shadow-lg shadow-violet-600/20" />
+                    <span className="font-bold text-xl tracking-tight">Frost</span>
                 </div>
 
                 <nav className="flex-1 px-4 py-6 flex flex-col gap-2">
@@ -137,11 +136,11 @@ const AgentLayout: React.FC = () => {
                             key={item.id}
                             onClick={() => setActiveTab(item.id)}
                             className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group text-sm font-medium ${activeTab === item.id
-                                ? 'bg-indigo-600/10 text-indigo-400'
+                                ? 'bg-violet-600/10 text-violet-400'
                                 : 'text-zinc-400 hover:bg-white/5 hover:text-white'
                                 }`}
                         >
-                            <item.icon size={20} className={`transition-colors ${activeTab === item.id ? 'text-indigo-500' : 'text-zinc-500 group-hover:text-zinc-300'}`} />
+                            <item.icon size={20} className={`transition-colors ${activeTab === item.id ? 'text-violet-500' : 'text-zinc-500 group-hover:text-zinc-300'}`} />
                             <span>{item.label}</span>
                         </button>
                     ))}
@@ -165,7 +164,7 @@ const AgentLayout: React.FC = () => {
             >
                 <header className="h-[72px] px-8 flex items-center justify-between border-b border-white/5 bg-zinc-950/80 backdrop-blur-md z-10">
                     <div className="flex items-center gap-4">
-                        <div className="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30 text-indigo-400 font-bold">
+                        <div className="h-10 w-10 rounded-full bg-violet-500/20 flex items-center justify-center border border-violet-500/30 text-violet-400 font-bold">
                             {user?.name?.[0].toUpperCase()}
                         </div>
                         <div className="flex flex-col">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore, UserRole } from '../../shared/store/useAuthStore';
 import { ShieldCheck, LogIn, User, Lock, Mail, AlertCircle, Activity } from 'lucide-react';
+import frostLogo from '../../assets/frost-logo.jpg';
 
 const LoginPage: React.FC = () => {
     const navigate = useNavigate();
@@ -49,14 +50,12 @@ const LoginPage: React.FC = () => {
     return (
         <div className="min-h-screen w-full bg-[#0a0a0c] flex items-center justify-center p-6 relative overflow-hidden">
             {/* Background Effects */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/20 rounded-full blur-[120px] -z-10 animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] -z-10" />
 
             <div className="w-full max-w-md">
                 <div className="mb-8 text-center">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600 mb-6 shadow-xl shadow-indigo-600/20">
-                        <ShieldCheck size={32} className="text-white" />
-                    </div>
+                    <img src={frostLogo} alt="Frost" className="inline-block h-24 w-24 rounded-2xl mb-6 shadow-2xl shadow-violet-600/20" />
                     <h1 className="text-4xl font-bold text-white tracking-tight">Welcome back</h1>
                     <p className="text-gray-500 mt-2 font-medium">Log in to your dialer account</p>
                 </div>
@@ -73,7 +72,7 @@ const LoginPage: React.FC = () => {
                         <div>
                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 px-1">Email Address</label>
                             <div className="relative group">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-indigo-500 transition-colors" size={20} />
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-violet-500 transition-colors" size={20} />
                                 <input
                                     type="email"
                                     required
@@ -81,7 +80,7 @@ const LoginPage: React.FC = () => {
                                     disabled={loading}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="agent@globaldialer.com"
-                                    className="w-full bg-black/40 border border-white/5 focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
+                                    className="w-full bg-black/40 border border-white/5 focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
                                 />
                             </div>
                         </div>
@@ -89,7 +88,7 @@ const LoginPage: React.FC = () => {
                         <div>
                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 px-1">Password</label>
                             <div className="relative group">
-                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-indigo-500 transition-colors" size={20} />
+                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-violet-500 transition-colors" size={20} />
                                 <input
                                     type="password"
                                     required
@@ -97,7 +96,7 @@ const LoginPage: React.FC = () => {
                                     disabled={loading}
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="••••••••"
-                                    className="w-full bg-black/40 border border-white/5 focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
+                                    className="w-full bg-black/40 border border-white/5 focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
                                 />
                             </div>
                         </div>
@@ -105,7 +104,7 @@ const LoginPage: React.FC = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full bg-violet-600 hover:bg-violet-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-violet-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {loading ? (
                                 <Activity size={20} className="animate-spin" />
@@ -120,7 +119,7 @@ const LoginPage: React.FC = () => {
                 </div>
 
                 <p className="text-center text-gray-500 mt-8 text-sm">
-                    Protected by Global Dialer Security v1.0
+                    Protected by Frost Security v1.0
                 </p>
             </div>
         </div>

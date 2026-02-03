@@ -19,11 +19,11 @@ export const SupervisorMonitor: React.FC = () => {
                     <p className="text-sm text-zinc-400 mt-1">Real-time overview of all active floor operations</p>
                 </div>
                 <div className="flex gap-4">
-                    <div className="bg-indigo-600/10 border border-indigo-500/20 rounded-xl px-5 py-3 flex items-center gap-3">
-                        <Users size={18} className="text-indigo-400" />
+                    <div className="bg-violet-600/10 border border-violet-500/20 rounded-xl px-5 py-3 flex items-center gap-3">
+                        <Users size={18} className="text-violet-400" />
                         <div>
-                            <div className="text-[10px] uppercase tracking-wider font-bold text-indigo-300/60">Active Agents</div>
-                            <div className="font-bold text-indigo-100">12 / 15</div>
+                            <div className="text-[10px] uppercase tracking-wider font-bold text-violet-300/60">Active Agents</div>
+                            <div className="font-bold text-violet-100">12 / 15</div>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ export const SupervisorMonitor: React.FC = () => {
                             <tr key={call.id} className="hover:bg-white/5 transition-colors">
                                 <td className="px-6 py-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-xs font-bold text-indigo-400 border border-indigo-500/20">
+                                        <div className="w-8 h-8 rounded-full bg-violet-500/10 flex items-center justify-center text-xs font-bold text-violet-400 border border-violet-500/20">
                                             {call.agent[0]}
                                         </div>
                                         <span className="font-semibold text-zinc-200">{call.agent}</span>
@@ -53,8 +53,8 @@ export const SupervisorMonitor: React.FC = () => {
                                 <td className="px-6 py-4 text-zinc-400 font-mono text-sm">{call.customer}</td>
                                 <td className="px-6 py-4">
                                     <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 w-fit ${call.status === 'CONNECTED'
-                                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                                            : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                                        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                                        : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                                         }`}>
                                         <div className={`w-1.5 h-1.5 rounded-full ${call.status === 'CONNECTED' ? 'bg-emerald-400' : 'bg-amber-400'}`} />
                                         {call.status}
@@ -80,7 +80,7 @@ export const SupervisorMonitor: React.FC = () => {
                     <div className="text-xs text-zinc-500 mt-1">Compliance Score</div>
                 </div>
                 <div className="bg-zinc-900 border border-white/5 rounded-2xl p-6">
-                    <div className="flex items-center gap-3 mb-2 text-indigo-500">
+                    <div className="flex items-center gap-3 mb-2 text-violet-500">
                         <Phone size={20} />
                         <span className="font-semibold text-sm">Total Calls</span>
                     </div>

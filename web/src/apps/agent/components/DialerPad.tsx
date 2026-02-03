@@ -54,7 +54,7 @@ export const DialerPad: React.FC = () => {
     return (
         <div className="w-full max-w-sm bg-zinc-900 border border-white/5 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
             {/* Background Glow */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="mb-8 text-center relative z-10">
                 <div className="h-20 flex items-center justify-center text-3xl font-mono text-white tracking-widest bg-black/40 rounded-2xl mb-3 border border-white/5 relative group cursor-text">
@@ -89,7 +89,7 @@ export const DialerPad: React.FC = () => {
             <button
                 disabled={!canDial || !localNumber || !isConnected || initiating}
                 onClick={handleCall}
-                className="relative z-10 w-full h-14 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-bold flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg shadow-indigo-600/20 disabled:shadow-none"
+                className="relative z-10 w-full h-14 rounded-xl bg-violet-600 hover:bg-violet-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-bold flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg shadow-violet-600/20 disabled:shadow-none"
             >
                 {initiating ? (
                     <Activity className="animate-spin" size={20} />

@@ -4,6 +4,7 @@ import { Search, UserPlus, Filter, MoreVertical, Phone } from 'lucide-react';
 import { MockAgentService } from '../../../shared/services/mockAgentService';
 import { useDialerStore } from '../../../shared/store/useDialerStore';
 import { useUIStore } from '../../../shared/store/useUIStore';
+import { useSocketStore } from '../../../shared/store/useSocketStore';
 
 interface Lead {
     id: string;
@@ -16,6 +17,7 @@ export const ContactsView: React.FC = () => {
     const { token } = useAuthStore();
     const { setNumber } = useDialerStore();
     const { setActiveTab } = useUIStore();
+    const { showToast } = useSocketStore();
     const [leads, setLeads] = useState<Lead[]>([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
@@ -65,7 +67,10 @@ export const ContactsView: React.FC = () => {
                     <h1 className="text-2xl font-bold text-white">Contacts</h1>
                     <p className="text-sm text-zinc-400 mt-1">Manage and dial your assigned leads</p>
                 </div>
-                <button className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/20 flex items-center gap-2">
+                <button
+                    onClick={() => showToast('Add Lead feature coming soon!', 'info')}
+                    className="px-4 py-2 rounded-lg bg-violet-600 text-white text-sm font-medium hover:bg-violet-500 transition-colors shadow-lg shadow-violet-600/20 flex items-center gap-2"
+                >
                     <UserPlus size={18} />
                     <span>Add Lead</span>
                 </button>
@@ -77,7 +82,7 @@ export const ContactsView: React.FC = () => {
                     <input
                         type="text"
                         placeholder="Search by name or phone..."
-                        className="w-full bg-zinc-950 border border-white/5 rounded-lg pl-10 pr-4 py-2.5 text-zinc-200 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all outline-none"
+                        className="w-full bg-zinc-950 border border-white/5 rounded-lg pl-10 pr-4 py-2.5 text-zinc-200 text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all outline-none"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
@@ -104,7 +109,7 @@ export const ContactsView: React.FC = () => {
                                 <tr>
                                     <td colSpan={4} className="px-6 py-12 text-center text-zinc-500">
                                         <div className="flex flex-col items-center gap-3">
-                                            <div className="w-6 h-6 border-2 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
+                                            <div className="w-6 h-6 border-2 border-violet-500/30 border-t-violet-500 rounded-full animate-spin" />
                                             <span>Loading leads...</span>
                                         </div>
                                     </td>
@@ -120,7 +125,7 @@ export const ContactsView: React.FC = () => {
                                     <tr key={lead.id} className="hover:bg-white/5 transition-colors group">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-xs font-bold text-indigo-400 border border-indigo-500/20">
+                                                <div className="w-8 h-8 rounded-full bg-violet-500/10 flex items-center justify-center text-xs font-bold text-violet-400 border border-violet-500/20">
                                                     {lead.name[0].toUpperCase()}
                                                 </div>
                                                 <span className="font-semibold text-zinc-200">{lead.name}</span>
@@ -130,7 +135,7 @@ export const ContactsView: React.FC = () => {
                                         <td className="px-6 py-4">
                                             <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${lead.status === 'NEW'
                                                 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                                                : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                                                : 'bg-violet-500/10 text-violet-400 border border-violet-500/20'
                                                 }`}>
                                                 {lead.status}
                                             </span>
