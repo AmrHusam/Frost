@@ -1,0 +1,64 @@
+/* Logo Marquee */
+.marquee-section {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    background: #FAFAFA;
+}
+
+.marquee-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    max-width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #FAFAFA, transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #FAFAFA, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    gap: var(--space-xl);
+    padding-left: var(--space-xl);
+}
+
+.client-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 24px;
+    color: #D4D4D4;
+    /* Subtle gray */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

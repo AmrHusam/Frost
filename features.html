@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | Frost</title>
+    <meta name="description"
+        content="Explore Frost's powerful cold calling features: predictive dialing, live monitoring, and real-time coaching.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+
+    <style>
+        .features-hero {
+            padding: var(--space-xl) 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%);
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            padding: var(--space-xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .feature-row:last-child {
+            border-bottom: none;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-visual {
+            flex: 1;
+            background: #F4F4F5;
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        .feature-icon-lg {
+            width: 48px;
+            height: 48px;
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--color-accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+
+            .feature-row,
+            .feature-row:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-md);
+            }
+
+            .feature-icon-lg {
+                margin: 0 auto var(--space-sm);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Book a Demo</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md); font-size: 14px;">See how Frost
+                can double your connect rates this week.</p>
+
+            <form id="demo-form">
+                <div class="form-group">
+                    <label class="form-label">Work Email</label>
+                    <input type="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="(555) 555-0123" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Team Size</label>
+                    <select class="form-input">
+                        <option>1-10 Agents</option>
+                        <option>11-50 Agents</option>
+                        <option>50+ Agents</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Demo</button>
+                    <small>No credit card required. Cancel anytime.</small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <nav class="container navbar">
+            <a href="index.html" class="brand">Frost.</a>
+
+            <!-- Desktop Nav -->
+            <ul class="nav-links">
+                <li><a href="features.html" style="color: var(--color-text-main);">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary small js-open-modal">Book a Demo</a>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="#" class="js-open-modal">Book a Demo</a>
+    </div>
+    <div class="mobile-backdrop"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="features-hero container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="badge">Platform Features</span>
+                <h1 class="hero-title">The engine room for<br>high growth sales.</h1>
+                <p class="hero-subtitle">Every tool you need to manage, monitor, and master your outbound sales
+                    operation.</p>
+            </div>
+        </section>
+
+        <!-- Features Deep Dive -->
+        <section class="container">
+            <!-- Feature 1 -->
+            <div class="feature-row">
+                <div class="feature-content">
+                    <div class="feature-icon-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h2>Predictive Dialing</h2>
+                    <p style="color: var(--color-text-muted); line-height: 1.6;">
+                        Stop wasting time on ringtones and voicemails. Frost's AI-driven dialer navigates the noise and
+                        only connects your agents when a real human answers.
+                    </p>
+                    <ul
+                        style="margin-top: var(--space-sm); color: var(--color-text-muted); list-style-position: inside;">
+                        <li>• 3x more conversations per hour</li>
+                        <li>• Local presence caller ID</li>
+                        <li>• Automatic voicemail drop</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    Predictive Dialer Diagram Placeholder
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-row">
+                <div class="feature-content">
+                    <div class="feature-icon-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                        </svg>
+                    </div>
+                    <h2>Live Monitoring & Whisper</h2>
+                    <p style="color: var(--color-text-muted); line-height: 1.6;">
+                        Train your team in real-time. Listen in on any active call and "whisper" advice to your agent
+                        that the prospect can't hear.
+                    </p>
+                    <ul
+                        style="margin-top: var(--space-sm); color: var(--color-text-muted); list-style-position: inside;">
+                        <li>• Live call transparency</li>
+                        <li>• One-click barge in</li>
+                        <li>• Call recording library</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    Live Monitor Interface Placeholder
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-row">
+                <div class="feature-content">
+                    <div class="feature-icon-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                    </div>
+                    <h2>Floor Analytics</h2>
+                    <p style="color: var(--color-text-muted); line-height: 1.6;">
+                        Gamify your sales floor. Project live leaderboards on office TVs and track individual
+                        performance metrics to drive healthy competition.
+                    </p>
+                </div>
+                <div class="feature-visual">
+                    Analytics Dashboard Placeholder
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container">
+            <div class="cta-section" style="margin-bottom: var(--space-xl);">
+                <h2>Ready to ramp up?</h2>
+                <p>Deploy Frost today and see results by tomorrow.</p>
+                <a href="#" class="btn btn-primary js-open-modal">Get Started</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <span class="brand">Frost.</span>
+                <p>The operating system for modern sales teams.</p>
+                <small>&copy; 2026 Frost Inc.</small>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Dialer</a></li>
+                    <li><a href="#">CRM Sync</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="legal.html">Privacy</a></li>
+                    <li><a href="legal.html">Terms</a></li>
+                    <li><a href="#">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

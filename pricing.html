@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Frost</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        @media (min-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                /* Center vertically if heights differ */
+            }
+        }
+
+        .pricing-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            transition: all var(--transition-smooth);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+            z-index: 10;
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .price {
+            font-family: var(--font-heading);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin: var(--space-md) 0;
+            color: var(--color-text-main);
+        }
+
+        .price span {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .features-list {
+            margin: var(--space-md) 0;
+            text-align: left;
+            padding-left: var(--space-md);
+        }
+
+        .features-list li {
+            margin-bottom: var(--space-xs);
+            color: var(--color-text-muted);
+            font-size: 15px;
+            /* Slightly larger for readability */
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .card-label {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Book a Demo</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md); font-size: 14px;">See how Frost
+                can double your connect rates this week.</p>
+
+            <form id="demo-form">
+                <div class="form-group">
+                    <label class="form-label">Work Email</label>
+                    <input type="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="(555) 555-0123" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Team Size</label>
+                    <select class="form-input">
+                        <option>1-10 Agents</option>
+                        <option>11-50 Agents</option>
+                        <option>50+ Agents</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Demo</button>
+                    <small>No credit card required. Cancel anytime.</small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="#" class="js-open-modal">Book a Demo</a>
+    </div>
+    <div class="mobile-backdrop"></div>
+    <header class="site-header">
+        <nav class="container navbar">
+            <a href="index.html" class="brand">Frost.</a>
+            <ul class="nav-links">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html" style="color: var(--color-text-main);">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary small js-open-modal">Book a Demo</a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" style="padding-top: var(--space-xl); text-align: center;">
+            <span class="badge">Flexible Plans</span>
+            <h1 class="hero-title">Scale your floor<br>predictably.</h1>
+            <p class="hero-subtitle">Per-seat pricing that grows with your team. No contracts for small teams.</p>
+
+            <div class="pricing-grid">
+                <!-- Startup -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$50<span>/mo</span></div>
+                    <p style="color: var(--color-text-muted); font-size: 14px;">Per agent seat.</p>
+                    <ul class="features-list">
+                        <li>Basic 3-Line Dialer</li>
+                        <li>Local Presence ID</li>
+                        <li>Call Recording (30 days)</li>
+                        <li>Basic CRM Integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-text"
+                        style="margin: 0; width: 100%; border: 1px solid var(--color-border);">Start Trial</a>
+                </div>
+
+                <!-- Growth -->
+                <div class="pricing-card featured">
+                    <span class="card-label">Best for Agencies</span>
+                    <h3>Growth</h3>
+                    <div class="price">$85<span>/mo</span></div>
+                    <p style="color: var(--color-text-muted); font-size: 14px;">Per agent seat.</p>
+                    <ul class="features-list">
+                        <li>10-Line Power Dialer</li>
+                        <li>Live Monitor & Whisper</li>
+                        <li>Unlimited Recording</li>
+                        <li>Salesforce/HubSpot Sync</li>
+                        <li>Leaderboards</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p style="color: var(--color-text-muted); font-size: 14px;">For 50+ Seats.</p>
+                    <ul class="features-list">
+                        <li>Dedicated private servers</li>
+                        <li>Custom AI Routing models</li>
+                        <li>SLA & 24/7 Phone Support</li>
+                        <li>On-site onboarding</li>
+                    </ul>
+                    <a href="#" class="btn btn-text"
+                        style="margin: 0; width: 100%; border: 1px solid var(--color-border);">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: var(--space-xl); text-align: center;">
+            <p style="color: var(--color-text-muted);">Powering sales teams at <strong>ColdScale</strong>,
+                <strong>Revenue.io</strong>, and <strong>Apex Calls</strong>.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <span class="brand">Frost.</span>
+                <p>The operating system for modern sales teams.</p>
+                <small>&copy; 2026 Frost Inc.</small>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Dialer</a></li>
+                    <li><a href="features.html#integrations">CRM Sync</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="features.html#integrations">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#" class="js-open-modal">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="legal.html">Privacy</a></li>
+                    <li><a href="legal.html">Terms</a></li>
+                    <li><a href="features.html#compliance">Compliance (TCPA)</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

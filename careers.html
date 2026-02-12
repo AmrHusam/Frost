@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Frost</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Book a Demo</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md); font-size: 14px;">See how Frost
+                can double your connect rates this week.</p>
+            <form id="demo-form">
+                <div class="form-group">
+                    <label class="form-label">Work Email</label>
+                    <input type="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Demo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="#" class="js-open-modal">Book a Demo</a>
+    </div>
+    <div class="mobile-backdrop"></div>
+
+    <header class="site-header">
+        <nav class="container navbar">
+            <a href="index.html" class="brand">Frost.</a>
+            <ul class="nav-links">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary small js-open-modal">Book a Demo</a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 60px;">
+            <span class="badge">Careers</span>
+            <h1 class="hero-title">Join the boiler room.</h1>
+            <p class="hero-subtitle">We're looking for relentless builders and sellers to help us scale.</p>
+        </div>
+
+        <div class="grid-3" style="gap: 30px;">
+            <!-- Job Card 1 -->
+            <div class="feature-card" style="text-align: left;">
+                <span
+                    style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">Sales</span>
+                <h3 style="margin-top: 8px;">Account Executive</h3>
+                <p style="font-size: 14px; margin-bottom: 20px;">Close high-velocity deals. Experience with cold calling
+                    required.</p>
+                <a href="mailto:careers@frost.inc?subject=Account Executive Application" class="btn btn-text"
+                    style="margin-left: 0; padding: 0;">Apply Now &rarr;</a>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="feature-card" style="text-align: left;">
+                <span
+                    style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">Engineering</span>
+                <h3 style="margin-top: 8px;">VoIP Engineer</h3>
+                <p style="font-size: 14px; margin-bottom: 20px;">Build the lowest latency voice infrastructure in the
+                    world.</p>
+                <a href="mailto:careers@frost.inc?subject=VoIP Engineer Application" class="btn btn-text"
+                    style="margin-left: 0; padding: 0;">Apply Now &rarr;</a>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="feature-card" style="text-align: left;">
+                <span
+                    style="font-size: 12px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">Support</span>
+                <h3 style="margin-top: 8px;">Onboarding Specialist</h3>
+                <p style="font-size: 14px; margin-bottom: 20px;">Help new agencies set up their floors and start
+                    dialing.</p>
+                <a href="mailto:careers@frost.inc?subject=Onboarding Specialist Application" class="btn btn-text"
+                    style="margin-left: 0; padding: 0;">Apply Now &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Simplified) -->
+    <!-- Footer (Standard) -->
+    <footer class="site-footer container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <span class="brand">Frost.</span>
+                <p>The operating system for modern sales teams.</p>
+                <small>&copy; 2026 Frost Inc.</small>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Dialer</a></li>
+                    <li><a href="features.html#integrations">CRM Sync</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="features.html#integrations">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#" class="js-open-modal">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="legal.html#privacy">Privacy</a></li>
+                    <li><a href="legal.html#terms">Terms</a></li>
+                    <li><a href="features.html#compliance">Compliance (TCPA)</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

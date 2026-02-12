@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal | Frost</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+
+<body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="#" class="js-open-modal">Book a Demo</a>
+    </div>
+    <div class="mobile-backdrop"></div>
+
+    <header class="site-header">
+        <nav class="container navbar">
+            <a href="index.html" class="brand">Frost.</a>
+            <ul class="nav-links">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary small js-open-modal">Book a Demo</a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px; max-width: 800px;">
+        <h1 class="hero-title" style="font-size: 32px; margin-bottom: 24px;">Legal & Privacy</h1>
+
+        <div style="margin-bottom: 40px;" id="privacy">
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 16px;">Privacy Policy</h2>
+            <p style="color: var(--color-text-muted); line-height: 1.6;">
+                At Frost, we take data security seriously. We do not sell your data. Conversations are encrypted at rest
+                and in transit.
+                We only use data to provide and improve our services.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 40px;" id="terms">
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 16px;">Terms of Service</h2>
+            <p style="color: var(--color-text-muted); line-height: 1.6;">
+                By using Frost, you agree to comply with all applicable laws, including TCPA and DNC regulations.
+                Frost provides the tools, but you are responsible for their compliant use.
+            </p>
+        </div>
+
+        <a href="index.html" class="btn btn-text">&larr; Back to Home</a>
+    </main>
+
+    <!-- Footer (Simplified) -->
+    <footer class="site-footer container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <span class="brand">Frost.</span>
+                <small>&copy; 2026 Frost Inc.</small>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

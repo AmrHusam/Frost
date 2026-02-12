@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Frost</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+
+    <style>
+        .manifesto-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .manifesto-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-muted);
+        }
+
+        .manifesto-content strong {
+            color: var(--color-text-main);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--space-md);
+            background: #F9FAFB;
+            border-radius: var(--radius-md);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 class="modal-title">Book a Demo</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md); font-size: 14px;">See how Frost
+                can double your connect rates this week.</p>
+
+            <form id="demo-form">
+                <div class="form-group">
+                    <label class="form-label">Work Email</label>
+                    <input type="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="(555) 555-0123" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Team Size</label>
+                    <select class="form-input">
+                        <option>1-10 Agents</option>
+                        <option>11-50 Agents</option>
+                        <option>50+ Agents</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Demo</button>
+                    <small>No credit card required. Cancel anytime.</small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="#" class="js-open-modal">Book a Demo</a>
+    </div>
+    <div class="mobile-backdrop"></div>
+    <header class="site-header">
+        <nav class="container navbar">
+            <a href="index.html" class="brand">Frost.</a>
+            <ul class="nav-links">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html" style="color: var(--color-text-main);">About</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary small js-open-modal">Book a Demo</a>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" style="padding-top: var(--space-xl); text-align: center;">
+            <span class="badge">The Mission</span>
+            <h1 class="hero-title">Cold calling is<br>the ultimate test.</h1>
+        </section>
+
+        <section class="container manifesto-content" id="manifesto">
+            <p><strong>Sales teams are flying blind.</strong> They hire energetic reps, hand them a list of numbers, and
+                hope for the best. Managers have no idea why one rep closes and another fails until the end-of-month
+                report.</p>
+
+            <p>We believe high-velocity sales is an engineering problem. It requires precision, monitoring, and rapid
+                feedback loops. </p>
+
+            <p>Frost was built for the floor managers who need to see everything. The VPs who need scalable revenue. And
+                the cold callers grinding it out every single day.</p>
+
+            <p>We turn the chaos of the boiler room into a <strong>predictable revenue engine</strong>.</p>
+        </section>
+
+        <section class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100M+</span>
+                    <span class="stat-label">Calls Routed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5x</span>
+                    <span class="stat-label">Connect Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">Agencies</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container">
+            <div class="cta-section">
+                <h2>Build your boiler room.</h2>
+                <p>We're empowering the next generation of sales leaders.</p>
+                <a href="careers.html" class="btn btn-primary">Join the Team</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <span class="brand">Frost.</span>
+                <p>The operating system for modern sales teams.</p>
+                <small>&copy; 2026 Frost Inc.</small>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Dialer</a></li>
+                    <li><a href="features.html#integrations">CRM Sync</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="features.html#integrations">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#" class="js-open-modal">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="legal.html">Privacy</a></li>
+                    <li><a href="legal.html">Terms</a></li>
+                    <li><a href="features.html#compliance">Compliance (TCPA)</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
