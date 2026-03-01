@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore, UserRole } from '../../shared/store/useAuthStore';
-import { ShieldCheck, LogIn, User, Lock, Mail, AlertCircle, Activity } from 'lucide-react';
+import { ShieldCheck, LogIn, User, Lock, Mail, AlertCircle, Activity, Eye, EyeOff } from 'lucide-react';
 import frostLogo from '../../assets/frost-logo.jpg';
 
 const LoginPage: React.FC = () => {
@@ -11,6 +11,7 @@ const LoginPage: React.FC = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -90,14 +91,21 @@ const LoginPage: React.FC = () => {
                             <div className="relative group">
                                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-focus-within:text-violet-500 transition-colors" size={20} />
                                 <input
-                                    type="password"
+                                    type={showPassword ? 'text' : 'password'}
                                     required
                                     value={password}
                                     disabled={loading}
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="••••••••"
-                                    className="w-full bg-black/40 border border-white/5 focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 rounded-2xl py-4 pl-12 pr-4 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
+                                    className="w-full bg-black/40 border border-white/5 focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 rounded-2xl py-4 pl-12 pr-12 text-white outline-none transition-all placeholder:text-gray-700 disabled:opacity-50"
                                 />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-400 transition-colors"
+                                >
+                                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                                </button>
                             </div>
                         </div>
 

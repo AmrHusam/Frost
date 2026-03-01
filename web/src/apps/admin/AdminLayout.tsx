@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../../shared/store/useAuthStore';
 import { ConnectionIndicator } from '../../shared/components/ConnectionStatus';
+import frostLogo from '../../assets/frost-logo.jpg';
 import {
     Activity,
     Layers,
@@ -30,11 +31,10 @@ export default function AdminLayout() {
             {/* Sidebar */}
             <aside className="frost-sidebar">
                 <div style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ height: '32px', width: '32px', borderRadius: '8px', background: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <ShieldCheck size={20} color="white" />
-                    </div>
-                    <span style={{ fontWeight: 700, fontSize: '20px' }}>Global<span style={{ color: 'hsl(var(--primary))' }}>Admin</span></span>
+                    <img src={frostLogo} alt="Frost" style={{ height: '32px', width: '32px', borderRadius: '8px', objectFit: 'cover' }} />
+                    <span style={{ fontWeight: 800, fontSize: '22px', letterSpacing: '-0.03em' }}>Frost</span>
                 </div>
+
 
                 <nav style={{ flex: 1, padding: '24px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {navItems.map((item) => {

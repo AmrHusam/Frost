@@ -6,6 +6,10 @@ import { useAuthStore } from './shared/store/useAuthStore';
 const AgentLayout = React.lazy(() => import('./apps/agent/AgentLayout'));
 const AdminLayout = React.lazy(() => import('./apps/admin/AdminLayout'));
 const AdminDashboard = React.lazy(() => import('./apps/admin/components/AdminDashboard'));
+const CampaignsView = React.lazy(() => import('./apps/admin/components/CampaignsView'));
+const UsersView = React.lazy(() => import('./apps/admin/components/UsersView'));
+const ComplianceView = React.lazy(() => import('./apps/admin/components/ComplianceView'));
+const AnalyticsView = React.lazy(() => import('./apps/admin/components/AnalyticsView'));
 const LoginPage = React.lazy(() => import('./apps/shared/LoginPage'));
 
 // Protected Route Wrapper
@@ -50,11 +54,12 @@ export default function App() {
                         }
                     >
                         <Route index element={<AdminDashboard />} />
-                        <Route path="campaigns" element={<div>Campaigns View (Placeholder)</div>} />
-                        <Route path="users" element={<div>Users View (Placeholder)</div>} />
-                        <Route path="compliance" element={<div>Compliance View (Placeholder)</div>} />
-                        <Route path="stats" element={<div>Stats View (Placeholder)</div>} />
+                        <Route path="campaigns" element={<CampaignsView />} />
+                        <Route path="users" element={<UsersView />} />
+                        <Route path="compliance" element={<ComplianceView />} />
+                        <Route path="stats" element={<AnalyticsView />} />
                     </Route>
+
 
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
